@@ -1,11 +1,11 @@
 # RPI_Signalk_Install
 
-This repos is intended to give you the command lines and script to configure a Raspberry Pi with SignalK and and WaveShare 2Ch Can Hat.
+This repo is intended to give you the command lines and script to configure a Raspberry Pi with SignalK and WaveShare 2Ch Can Hat.
 Following the Youtube video explaining how I came to this configuration https://www.youtube.com/watch?v=LtRXSjpMPuI, I create a second video to describe how to install the configuration here 
 
-*Une version française est disponible dans ce dépot: https://github.com/Merange/RPI_Signalk_Install_Fr*
+*Une version française est disponible dans ce dépôt: https://github.com/Merange/RPI_Signalk_Install_Fr*
 
-*You have a French version in this repos https://github.com/Merange/RPI_Signalk_Install_Fr*
+*You have a French version in this repo https://github.com/Merange/RPI_Signalk_Install_Fr*
 
 # CANopen Waveshare Hat installation
 get the bcm2835 source library and build it in the current folder
@@ -28,8 +28,8 @@ cd WiringPi-master/
 sudo ./build 
 ```
 
-Add access to the Waveshare board into the __*/boot/firmware/config.txt*__ file (use text editor with super user right e.g. *sudo nano*) with these line
-The access to the 2 chanels will be via __*can0*__ and __*can1*__
+Add access to the Waveshare board into the __*/boot/firmware/config.txt*__ file (use text editor with super user right e.g. *sudo nano*) with these lines
+The access to the 2 channels will be via __*can0*__ and __*can1*__
 ```
 dtparam=spi=on
 dtoverlay=mcp2515-can1,oscillator=16000000,interrupt=25
@@ -37,7 +37,7 @@ dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=23
 dtoverlay=spi-bcm2835-overlay
 ```
 
-After a reboot, you can create the netwok links and configure the CAN port to 250kbit/s the NMEA2000 speed
+After a reboot, you can create the network links and configure the CAN port to 250kbit/s the NMEA2000 speed
 ```
 sudo ip link set can0 up type can bitrate 250000
 sudo ip link set can1 up type can bitrate 250000
@@ -45,7 +45,7 @@ sudo ifconfig can0 txqueuelen 65536
 sudo ifconfig can1 txqueuelen 65536
 ```
 
-Install the can util software to test the confuration
+Install the can util software to test the configuration
 ```
 sudo apt-get install can-utils -y
 ```
