@@ -3,7 +3,7 @@
 This repos is intended to give you the command lines and script to configure a Raspberry Pi with SignalK and and WaveShare 2Ch Can Hat.
 Following the Youtube video explaining how I came to this configuration https://www.youtube.com/watch?v=LtRXSjpMPuI, I create a second video to describe how to install the configuration here 
 
-# Command used during the configuration
+# CANopen Waveshare Hat installation
 get the bcm2835 source library and build it in the current folder
 ```
 wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.60.tar.gz
@@ -52,7 +52,7 @@ candump can0
 cansend can1 000#11.22.33.44
 ```
 
-#SignalK installation
+# SignalK installation
 I follow the SignalK setup procedure
 Install NodeJS, the necessary libraries and finally SignalK from NodeJS
 ```
@@ -60,3 +60,13 @@ sudo apt install nodejs
 sudo apt install libnss-mdns avahi-utils libavahi-compat-libdnssd-dev
 sudo npm install -g signalk-server
 ```
+
+To be sure SignalK service is started *after* the CanOpen service you must modify the *__signalK service__*
+```
+sudo systemctl edit signalk.service
+```
+and add at the end of the file
+```
+After=socketcan-interface.service
+```
+
