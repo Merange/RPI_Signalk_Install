@@ -1,4 +1,4 @@
-# RPI_Signalk_Install
+# RPI_SignalK_Install
 
 This repo is intended to give you the command lines and script to configure a Raspberry Pi with SignalK and WaveShare 2Ch Can Hat.
 Following the Youtube video explaining how I came to this configuration https://www.youtube.com/watch?v=LtRXSjpMPuI, I create a second video to describe how to install the configuration here 
@@ -58,7 +58,7 @@ cansend can1 000#11.22.33.44
 
 # SignalK installation
 I follow the SignalK setup procedure
-Install NodeJS, the necessary libraries and finally SignalK from NodeJS
+Install NodeJS, NPM, the necessary libraries and finally SignalK with NPM 
 ```
 sudo apt install nodejs
 sudo apt install libnss-mdns avahi-utils libavahi-compat-libdnssd-dev
