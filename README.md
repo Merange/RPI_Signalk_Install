@@ -3,6 +3,8 @@
 This repos is intended to give you the command lines and script to configure a Raspberry Pi with SignalK and and WaveShare 2Ch Can Hat.
 Following the Youtube video explaining how I came to this configuration https://www.youtube.com/watch?v=LtRXSjpMPuI, I create a second video to describe how to install the configuration here 
 
+*You have a French version in this repos https://github.com/Merange/RPI_Signalk_Install_Fr*
+
 # CANopen Waveshare Hat installation
 get the bcm2835 source library and build it in the current folder
 ```
